@@ -3,6 +3,10 @@ Congratulations! You have been hired by Access Camp and for your first job, you 
 
 A `camper` can participate in many `activities` and an `activity` can have many `campers` participating in it.
 
+** Needs a Joiner Method**
+
+Camper >-Signup (Joiner Method)-< Activity
+
 Visiting `/campers` will show the index page of all the campers and visiting `/activities` will go to the index page for all the `activities`.
 Currently, we don't have any way to associate the two, so consider the relationship and think about how a `camper` can `signup` for an `activity`!
 
@@ -10,13 +14,39 @@ Currently, we don't have any way to associate the two, so consider the relations
 
 1. To log a camper with an activity, we need to store some additional information in our database. Make the necessary updates to our database, so that **a `camper` can have many `activities`** and **an `activity` can have many campers**. The `signup` should also include a time (as an integer) that is between 0 and 23, referring to the hour of the activity.
 
+* create a joiner table 'signup' model to join campers and activities 
+* build out a relationship amongst the models 
+* create a migration with foreign keys 
+
+* validation on the hour property of signup to make its between 0 and 23 
+
 2. As a user, I should be able to go to the index page of the `campers` and click on the names to go to the show page for that `camper`. The show page should show the `camper's` name, their age and the list of activities that they have signed up for.
+
+* index page for campers
+* show page for camper
+* show action in the controller 
+* show view 
+    * name, age, and list of activities they signed up for
 
 3. As a user, I should be able to go to the index page of the `activities` and click on the name of the activity to go to the show page for that `activity`. The show page should show the `activity's` name and its difficulty level.
 
+* index page for activities
+* show page for activity 
+    * name and difficulty level
+
 4. As a user, I should be able to fill out a form to create a new `signup` that will associate a `camper` with an `activity`. I should be able to choose an existing `activity`, choose an existing `camper` and add a time. Upon a successful creation, I should be redirected to the `camper's` show page.
 
+* create page for signup
+    * associate a camper with an activity 
+    * choose an existing activity, camper, and add time
+        * redirects to camper's show page
+
 5. As a user, I should be able to fill out a form to create a new `camper`, with their names (which must be unique) and age (which must be between 8 and 18)!
+
+* new page for camper
+    * fill out a form
+        * unique names 
+        * age must be between 8 and 18 
 
 ### Hints / Tips
 

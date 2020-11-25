@@ -1,0 +1,9 @@
+<h1> Test </h1>
+
+<%= form_for @camper do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+    <%= f.label :age %>
+    <%= f.number_field :age %><br>
+  <%= f.submit%>
+<% end %>
